@@ -39,7 +39,20 @@ window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 
-    // // animation footer on scroll
-    // let footer = document.querySelector('footer');
-    // footer.classList.toggle('show-animate', this.innerHeight + this.scrollY => document.scrollingElement.scrollHeight)
 }
+     document.getElementById('talkLink').addEventListener('click', function (event) {
+         // Prevenir el comportamiento predeterminado del enlace
+         event.preventDefault();
+
+         // Obtén la posición de la sección de contacto
+         const contactSection = document.getElementById('contact');
+         const contactSectionPosition = contactSection.offsetTop;
+
+         // Desplázate suavemente hasta la posición de la sección de contacto
+         window.scrollTo({
+             top: contactSectionPosition,
+             behavior: 'smooth'
+         });
+     });
+
+
